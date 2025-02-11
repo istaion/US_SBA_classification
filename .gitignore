@@ -1,4 +1,4 @@
-# Byte-compiled / optimized / DLL files
+ Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -130,6 +130,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.venv/
 env/
 venv/
 ENV/
@@ -171,3 +172,8 @@ cython_debug/
 .pypirc
 
 SBAnational.csv
+SBAnational_clean.csv
+
+banking-loan-approval-prediction.ipynb
+FRENCH _Should This Loan be Approved or Denied A Large Dataset with Class Assignment Guidelines.pdf
+Should This Loan be Approved or Denied A Large Dataset with Class Assignment Guidelines.pdf
