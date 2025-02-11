@@ -158,7 +158,7 @@ def get_RevLineCr_data (revLineCr : object ) -> int :
     data = str(revLineCr)
     
     match data :
-        case "O" : return 0 # Other
+        case "0" : return 0 # Other
         case "N" : return 1 # No 
         case "T" : return 2 # Term
         case "Y" : return 3 # Yes 
@@ -183,7 +183,23 @@ def get_LowDoc_data(lowDoc : object ) -> int :
 # 
 # region MIS_Status 
 #______________________________________________________________________________
+def get_MIS_Status_data(mis_status : object) -> str : 
+    if not mis_status :
+        return "Unknown"
+    
+    if mis_status == "P I F" or mis_status == "CHGOFF":
+        return str(mis_status)
+    
+    return "Unknown"
 
+def predict_MIS_Status_data(row : dict) -> str : 
+    if pd.isna(row['ChgOffDate']):
+        return 'P I F' 
+    
+    if pd.isna(row['MIS_Status']) : 
+        return 'CHGOFF' 
+    
+    return row['MIS_Status']
 #______________________________________________________________________________
 # 
 # region GrAppv
