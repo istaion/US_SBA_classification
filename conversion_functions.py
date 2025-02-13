@@ -193,11 +193,11 @@ def get_MIS_Status_data(mis_status : object) -> str :
     return "Unknown"
 
 def predict_MIS_Status_data(row : dict) -> str : 
-    if pd.isna(row['ChgOffDate']):
-        return 'P I F' 
-    
     if pd.isna(row['MIS_Status']) : 
-        return 'CHGOFF' 
+        if pd.isna(row['ChgOffDate']):
+            return 'P I F' 
+        else :
+            return 'CHGOFF' 
     
     return row['MIS_Status']
 #______________________________________________________________________________
